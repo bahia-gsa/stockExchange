@@ -1,0 +1,494 @@
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  box-sizing: border-box;
+  
+
+
+}
+body {
+  background-color: black;
+  background-size: cover;
+  min-height: 600px;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+nav {
+  text-align: center;
+  background-color:rgb(58, 58, 61);
+  position: relative;
+  z-index: 999;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+  margin-right: 10vw;
+  margin-left: 8vw;
+  align-items: center;
+
+}
+
+.menu > li {
+  float: left;
+  color: rgba(255, 255, 255, 0.951);
+  font-weight: bold;
+  width: 180px;
+  height: 40px;
+  line-height: 40px;
+  background: rgb(58, 58, 61);
+  cursor: pointer;
+  font-size: 1.5em;
+  margin: 0 35px;
+}
+
+.sub-menu {
+  transform: scale(0);
+  transform-origin: top center;
+  transition: all 300ms ease-in-out;
+
+}
+.sub-menu li {
+  font-size: 14px;
+  background: black;
+  color: rgba(255, 255, 255, 0.951);
+  transform: scale(0);
+  transform-origin: top center;
+  transition: all 300ms ease-in-out;
+
+
+}
+
+.sub-menu li:last-child {
+  border-bottom: 0;
+}
+.sub-menu li:hover {
+  /*background: rgba(255, 255, 255, 0.2);*/
+  background-color: rgb(58, 58, 61);
+}
+.menu > li:hover .sub-menu li {
+  transform: scale(1);
+}
+.menu > li:hover .sub-menu {
+  transform: scale(1);
+}
+
+/* FORM COMPRA E VENDA*/
+
+.compra-venda {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  width: 30vw;
+  margin-left: 35vw;
+  margin-right: 35vw;
+  margin-top: 20vh;
+  background-color: none;
+
+}
+
+.formBuySell h1, .formSell h1{
+text-align: center;
+margin-bottom: 15px;
+color: white;
+}
+
+.formBuySell {
+  background-color: #1f314a;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+
+}
+.formSell {
+  background-color: #5e2020;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+
+}
+
+.formBuySell label, .formSell label {
+  display: block;
+  margin-bottom: 10px;
+  font-style: oblique;
+  text-decoration: underline;
+  color: white;
+}
+
+.formBuySell input[type="text"],
+.formBuySell input[type="number"],
+.formBuySell input[type="date"],
+.formBuySell input[type="submit"],
+.formSell input[type="text"],
+.formSell input[type="number"],
+.formSell input[type="date"],
+.formSell input[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #B9E9FC;
+}
+
+.formBuySell input[type="submit"], .formSell input[type="submit"] {
+  background-color: #476ca0;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.formBuySell input[type="submit"]:hover {
+  background-color: #0062cc;
+}
+
+.formSell input[type="submit"]:hover {
+  background-color: #cc0000;
+}
+
+.formSell select {
+  display: block;
+  background-color: #B9E9FC;
+  width: 50%;
+  padding: 5px;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-left: 25%;
+  margin-top: 25px;
+}
+.formBuySell select {
+  display: block;
+  background-color: #B9E9FC;
+  width: 50%;
+  padding: 5px;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-left: 25%;
+  margin-top: 25px;
+}
+
+
+
+/* VIEW TICKER*/
+.container_ticker {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+  "a b "
+  "c b"
+  "c b";
+  align-items: center;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 20px;
+  background-color: none;
+  height: 85vh;
+  margin-top: 50px;
+
+
+}
+#tableResults {
+  grid-area: a;
+}
+#balance_sheet_ticker {
+  grid-area: c;
+}
+#listTransactions {
+  grid-area: b;
+}
+
+
+.menu-tciker {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color:none;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+
+
+.menu-tciker select {
+  margin-left: 20%;
+  height: 40px;
+  width: 125px; 
+  font-size: 1.3em;
+  text-align: center;
+  border: none;
+  background: linear-gradient(to bottom, #f0f0f0, #e6e6e6);
+  color: #333;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.menu-tciker select option {
+  background: #f0f0f0;
+  font-size: 1em;
+  color: #333;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.menu-tciker select option:hover {
+  background-color: #e6e6e6;
+}
+/* GRIDS */
+#extras .ag-header-cell-label {
+  justify-content: center;
+  font-size: 1.5em;
+  color: yellow;
+
+
+}
+
+#extras{
+  margin-top: 10px;
+
+}
+
+#extras .ag-row{
+  background-color: none;
+}
+#extras .ag-header{
+  background-color:none;
+
+}
+.ag-theme-alpine {
+  /* disable all borders */
+  --ag-borders: none;
+  --ag-background-color: none;
+  --ag-header-foreground-color:black;
+  --ag-header-background-color: none;
+  --ag-odd-row-background-color: rgb(0, 0, 0, 0.03);
+
+}
+
+#listTransactions .ag-row{
+  font-size: 1.5em;
+}
+#listTransactions .ag-header{
+background-color: #19376D;
+}
+
+#listTransactions .ag-header-cell-label {
+  justify-content: center;
+  font-size: 1.5em;
+  color: rgba(255, 255, 255, 0.818);
+
+}
+
+#balance_sheet_ticker .ag-header{
+  background-color: #19376D;
+  }
+#balance_sheet_ticker .ag-row{
+  font-size: 1.5em; 
+}
+#balance_sheet_ticker .ag-header-cell-label {
+  justify-content: center;
+  font-size: 1.5em;
+  color: rgba(255, 255, 255, 0.818);
+  
+}
+
+#dashboardTable .ag-header-cell-label{
+  justify-content: center;
+  font-size: 1.5em;
+  color: rgba(255, 255, 255, 0.818);
+}
+#dashboardTable .ag-header{
+background-color: #19376D;
+
+}
+
+
+
+.wrap_dashboard {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+  "z x "
+  "w w";
+  align-items: center;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 20px;
+  background-color: none;
+  height: 90vh;
+  width: 90vw;
+}
+#container_dashboard{
+grid-area: z;
+width: 100%;
+height: 90%;
+}
+#container_barhighchart{
+  grid-area: x;
+  width: 100%;
+  height: 90%;
+}
+.divTable{
+  grid-area: w;
+  height: 100%;
+  width: 100%;
+  align-content: center;
+  align-items: center;
+  margin-top: 70px;
+}
+
+#dashboardTable{
+
+  height: 100%;
+  width: 50%;
+  align-content: center;
+  margin-left: 25%;
+
+}
+
+
+
+
+
+#balance_sheet_ticker .ag-row-hover {
+  background-color:rgba(123, 143, 230, 0.282); /* change background color as needed */
+}
+#listTransactions .ag-row-hover {
+  background-color:rgba(123, 143, 230, 0.282); /* change background color as needed */
+}
+#dashboardTable .ag-row-hover {
+  background-color:rgba(123, 143, 230, 0.282); /* change background color as needed */
+}
+#tableResults .ag-row-hover {
+  background-color:rgba(123, 143, 230, 0.282); /* change background color as needed */
+}
+
+
+#tableResults .ag-header{
+  background-color: #19376D;
+
+  }
+#tableResults .ag-row{
+  font-size: 1.5em; 
+}
+#tableResults .ag-header-cell-label{
+  justify-content: center;
+  font-size: 1.5em;
+  color: rgba(255, 255, 255, 0.818);
+  font-weight: bold;
+}
+
+
+.container-delete{
+  position:fixed;
+  top: 100px;;
+  left:0;
+  width:100%;
+  height:100%;
+}
+.container-delete > div{
+  position: relative;
+  background-color: none;
+  width: 80%;
+  margin-left: 15%;
+  margin-top: 50px;
+}
+
+#list_transactions_delete .ag-row{
+  font-size: 1.5em;
+}
+#list_transactions_delete .ag-header{
+background-color: #19376D;
+}
+
+#list_transactions_delete .ag-header-cell-label {
+  justify-content: center;
+  font-size: 1.5em;
+  color: rgba(255, 255, 255, 0.818);
+
+}
+#list_transactions_delete .ag-row-hover {
+  background-color:rgba(123, 143, 230, 0.282); /* change background color as needed */
+}
+#list_transactions_delete .ag-row-hover {
+  background-color:rgba(123, 143, 230, 0.282); /* change background color as needed */
+
+}
+button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+/* FLASH MSG*/
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.alert-error{
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+
+
+.full-width-header {
+  text-align: center ;
+  font-weight: bold ;
+  background-color: black;
+  color: white;
+  border: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.52em;
+  color: yellow;
+}
+
+#noAssets{
+  margin-top: 15%;
+  margin-left: 20%;
+  font-size: 2.7em;
+  font-style: oblique;
+  color:yellowgreen;
+}
+
+
